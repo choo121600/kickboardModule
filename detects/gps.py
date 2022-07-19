@@ -46,11 +46,11 @@ class Gps:
                     #데이터 처리 함수로 호출
                     self.parsing_data(line)
                     speed = str(max_speed)
-                    if BOHO[0][0] < self.gps.lat < BOHO[1][0] and BOHO[0][1] < self.gps.lon < BOHO[1][1]:
-                        inBoho = 1
-                    else:
-                        inBoho = 0
-                    in_str = "S, " + str(self.lat) + ', ' + str(self.lon) + ', ' + speed + ', ' + str(inBoho) + ", E"
+                    # if BOHO[0][0] < self.gps.lat < BOHO[1][0] and BOHO[0][1] < self.gps.lon < BOHO[1][1]:
+                    #     inBoho = 1
+                    # else:
+                    #     inBoho = 0
+                    in_str = "S, " + str(self.lat) + ', ' + str(self.lon) + ', ' + speed + ", E"
                     ser.write(in_str.encode('utf-8'))             
 
                     #line 변수 초기화
